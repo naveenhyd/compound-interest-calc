@@ -1,10 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
-$app-colors: (
-	text: #24292e,
-	bg: #1976d2,
-	bg-button: #483d8b,
-);
+@import "~src/assets/css/variables.scss";
 
 * {
 	margin: 0;
@@ -115,3 +111,9 @@ $sizes: 100;
 	}
 }
 @include padding-classes;
+
+h3 {
+	background-color: whitesmoke;
+	padding: 10px;
+	color: #24292f;
+}

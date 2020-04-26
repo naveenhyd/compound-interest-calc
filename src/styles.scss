@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+@import "~src/assets/css/variables.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Roboto", sans-serif;
+	color: map-get($app-colors, text);
+	font-weight: 300;
+}
+.page-content {
+	max-width: 1140px;
+	margin: 0 auto;
+	margin-top: 64px;
+	border: 1px solid #85a6ec;
+}
+input,
+select {
+	height: 20px;
+	// width: 200px;
+	font-size: 12px;
+}
+
+button {
+	border-radius: 5px;
+	width: auto;
+	padding: 5px 20px;
+	background-color: map-get($app-colors, bg-button);
+	color: white;
+	font-size: 13px;
+	&:focus {
+		outline: none;
+	}
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+$sizes: 100;
+
+@mixin margin-classes {
+	@for $i from 1 through $sizes {
+		$margin: $i * 1px;
+		/* margin #{$margin} */
+		.m#{$i} {
+			margin: $margin;
+		}
+		.ml#{$i} {
+			margin-left: $margin;
+		}
+		.mr#{$i} {
+			margin-right: $margin;
+		}
+		.mt#{$i} {
+			margin-top: $margin;
+		}
+		.mb#{$i} {
+			margin-bottom: $margin;
+		}
+		.mx#{$i} {
+			margin-left: $margin;
+			margin-right: $margin;
+		}
+		.my#{$i} {
+			margin-top: $margin;
+			margin-bottom: $margin;
+		}
+	}
+}
+@include margin-classes;
+
+@mixin padding-classes {
+	@for $i from 1 through $sizes {
+		$padding: $i * 1px;
+		/* padding #{$padding} */
+		.p#{$i} {
+			padding: $padding;
+		}
+		.pl#{$i} {
+			padding-left: $padding;
+		}
+		.pr#{$i} {
+			padding-right: $padding;
+		}
+		.pt#{$i} {
+			padding-top: $padding;
+		}
+		.pb#{$i} {
+			padding-bottom: $padding;
+		}
+		.px#{$i} {
+			padding-left: $padding;
+			padding-right: $padding;
+		}
+		.py#{$i} {
+			padding-top: $padding;
+			padding-bottom: $padding;
+		}
+	}
+}
+@include padding-classes;
+
+h3 {
+	background-color: whitesmoke;
+	padding: 10px;
+	color: #24292f;
+}

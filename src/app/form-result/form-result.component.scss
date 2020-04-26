@@ -1,0 +1,26 @@
+@import "~src/assets/css/variables.scss";
+.result-container {
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	width: 60%;
+	// border: 1px solid gold;
+}
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	td,
+	th {
+		border: 1px solid map-get($app-colors, table-border);
+		padding: 5px 10px;
+	}
+	th {
+		padding: 8px;
+	}
+	tr {
+		&:nth-child(even) {
+			background-color: #f2f2f2cc;
+		}
+	}
+}

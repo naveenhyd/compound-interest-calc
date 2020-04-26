@@ -1,0 +1,12 @@
+@import "~src/assets/css/variables.scss";
+
+table.formInput {
+	border-collapse: collapse;
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 50px;
+	td {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
+}

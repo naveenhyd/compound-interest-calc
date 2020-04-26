@@ -1,4 +1,5 @@
-# CompoundInterestCalc
+# Compound Interest Calculator
+URL: https://naveenhyd.github.io/compound-interest-calc/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 

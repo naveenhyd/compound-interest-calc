@@ -1,0 +1,57 @@
+<form>
+	<table border="0" class="formInput">
+		<tr>
+			<td>Base Amount</td>
+			<td>
+				<input
+					type="number"
+					name="base_amount"
+					id="base_amount"
+					placeholder="10,000"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>Interest Rate</td>
+			<td>
+				<input
+					type="number"
+					name="interest_rate"
+					id="interest_rate"
+					placeholder="9.50"
+				/>
+				<select name="period_type" id="period_type" class="ml10">
+					<option value="monthly">Monthly</option>
+					<option value="yearly">Yearly</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Calculation Period</td>
+			<td>
+				<input type="number" name="period" id="period" placeholder="12" />
+				<select name="period_type" id="period_type" class="ml10">
+					<option value="months">Months</option>
+					<option value="years">Years</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Compound Interval</td>
+			<td>
+				<select name="interval" id="interval">
+					<option value="monthly">Monthly</option>
+					<option value="quarterly">Quarterly</option>
+					<option value="halfyearly">Half Yearly</option>
+					<option value="yearly">Yearly</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<button type="button">Calculate</button>
+				<button type="reset" class="ml20">Reset</button>
+			</td>
+		</tr>
+	</table>
+</form>

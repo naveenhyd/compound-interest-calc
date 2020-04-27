@@ -8,6 +8,8 @@
 					name="base_amount"
 					id="base_amount"
 					placeholder="10,000"
+					[(ngModel)]="base_amount"
+					(keyup)="doCalculation($event)"
 				/>
 			</td>
 		</tr>
@@ -19,8 +21,15 @@
 					name="interest_rate"
 					id="interest_rate"
 					placeholder="9.50"
+					[(ngModel)]="interest_rate"
+					(keyup)="doCalculation($event)"
 				/>
-				<select name="period_type" id="period_type" class="ml10">
+				<select
+					name="interest_period_type"
+					id="interest_period_type"
+					class="ml10"
+					[(ngModel)]="interest_period_type"
+				>
 					<option value="monthly">Monthly</option>
 					<option value="yearly">Yearly</option>
 				</select>
@@ -29,8 +38,20 @@
 		<tr>
 			<td>Calculation Period</td>
 			<td>
-				<input type="number" name="period" id="period" placeholder="12" />
-				<select name="period_type" id="period_type" class="ml10">
+				<input
+					type="number"
+					name="calculation_period"
+					id="calculation_period"
+					placeholder="12"
+					[(ngModel)]="calculation_period"
+					(keyup)="doCalculation($event)"
+				/>
+				<select
+					name="calculation_period_type"
+					id="calculation_period_type"
+					class="ml10"
+					[(ngModel)]="calculation_period_type"
+				>
 					<option value="months">Months</option>
 					<option value="years">Years</option>
 				</select>
@@ -39,7 +60,11 @@
 		<tr>
 			<td>Compound Interval</td>
 			<td>
-				<select name="interval" id="interval">
+				<select
+					name="compound_interval"
+					id="compound_interval"
+					[(ngModel)]="compound_interval"
+				>
 					<option value="monthly">Monthly</option>
 					<option value="quarterly">Quarterly</option>
 					<option value="halfyearly">Half Yearly</option>

@@ -5,6 +5,13 @@
 	margin-bottom: 20px;
 	width: 60%;
 	// border: 1px solid gold;
+	.print-link {
+		float: right;
+		text-decoration: none;
+		font-size: 14px;
+		text-decoration: underline;
+		color: map-get($app-colors, "bg");
+	}
 }
 
 .table {
@@ -21,6 +28,9 @@
 	tr {
 		&:nth-child(even) {
 			background-color: #f2f2f2cc;
+		}
+		&:hover {
+			background-color: #b5f6b385;
 		}
 	}
 }

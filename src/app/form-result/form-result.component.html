@@ -1,5 +1,6 @@
-<div class="result-container">
-    <h3>Calculation Result</h3>
+<div class="result-container" id="resultContainer">
+	<h3>Calculation Result <a href="#" class="print-link" (click)="printPage()">Print Me</a></h3>
+	<!-- <div *ngFor='let row of dataService.finalResult'> {{message}} </div> -->
     <table class="table mt15">
         <tr>
             <th>Month</th>
@@ -7,55 +8,15 @@
             <th>Interest</th>
             <th>Total Interest</th>
             <th>Total Balance</th>
-            <th>Percentage</th>
+            <th>Times</th>
         </tr>
-        <tr>
-            <td align="center">1</td>
-            <td align="right">10,000.12</td>
-            <td align="right">123.23</td>
-            <td align="right">3123.23</td>
-            <td align="right">4123.23</td>
-            <td align="right">120.00 %</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>10.00</td>
-            <td>123.23</td>
-            <td>3123.23</td>
-            <td>4123.23</td>
-            <td align="right">2.3x</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>09</td>
-            <td>123.23</td>
-            <td>3123.23</td>
-            <td>4123.23</td>
-            <td align="right">120.00 %</td>
-        </tr>
-        <tr>
-            <td align="center">4</td>
-            <td align="right">10,000.12</td>
-            <td align="right">123.23</td>
-            <td align="right">3123.23</td>
-            <td align="right">4123.23</td>
-            <td align="right">120.00 %</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>10.00</td>
-            <td>123.23</td>
-            <td>3123.23</td>
-            <td>4123.23</td>
-            <td align="right">2.3x</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>09</td>
-            <td>123.23</td>
-            <td>3123.23</td>
-            <td>4123.23</td>
-            <td align="right">120.00 %</td>
+        <tr *ngFor='let row of dataService.finalResult'>
+            <td align="center">{{row.id}}</td>
+            <td align="right">{{row.opening_balance | currency: dataService.currencyCode}}</td>
+            <td align="right">{{row.interest | currency: dataService.currencyCode}}</td>
+            <td align="right">{{row.total_interest | currency: dataService.currencyCode}}</td>
+            <td align="right">{{row.total_balance | currency: dataService.currencyCode}}</td>
+            <td align="right">{{row.compound_times}}</td>
         </tr>
     </table>
 </div>

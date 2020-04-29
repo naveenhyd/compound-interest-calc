@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'compound-interest-calc';
+  title = 'Compound Interest Calculator Title';
 }

@@ -8,6 +8,7 @@
 					name="base_amount"
 					id="base_amount"
 					placeholder="10,000"
+					[(ngModel)]="base_amount"
 				/>
 			</td>
 		</tr>
@@ -19,8 +20,15 @@
 					name="interest_rate"
 					id="interest_rate"
 					placeholder="9.50"
+					[(ngModel)]="interest_rate"
+					(keyup)="doCalculation($event)"
 				/>
-				<select name="period_type" id="period_type" class="ml10">
+				<select
+					name="interest_rate_type"
+					id="interest_rate_type"
+					class="ml10"
+					[(ngModel)]="interest_rate_type"
+				>
 					<option value="monthly">Monthly</option>
 					<option value="yearly">Yearly</option>
 				</select>
@@ -29,8 +37,20 @@
 		<tr>
 			<td>Calculation Period</td>
 			<td>
-				<input type="number" name="period" id="period" placeholder="12" />
-				<select name="period_type" id="period_type" class="ml10">
+				<input
+					type="number"
+					name="calculation_period"
+					id="calculation_period"
+					placeholder="12"
+					[(ngModel)]="calculation_period"
+					(keyup)="doCalculation($event)"
+				/>
+				<select
+					name="calculation_period_type"
+					id="calculation_period_type"
+					class="ml10"
+					[(ngModel)]="calculation_period_type"
+				>
 					<option value="months">Months</option>
 					<option value="years">Years</option>
 				</select>
@@ -39,7 +59,11 @@
 		<tr>
 			<td>Compound Interval</td>
 			<td>
-				<select name="interval" id="interval">
+				<select
+					name="compound_interval"
+					id="compound_interval"
+					[(ngModel)]="compound_interval"
+				>
 					<option value="monthly">Monthly</option>
 					<option value="quarterly">Quarterly</option>
 					<option value="halfyearly">Half Yearly</option>
@@ -48,8 +72,65 @@
 			</td>
 		</tr>
 		<tr>
+			<td>Currency</td>
+			<td>
+				<div class="currency-codes">
+					<label [ngClass]="{'active': currencyCode == 'USD'}" for="dollar"
+						>&#36;
+						<input
+							type="radio"
+							name="currency"
+							id="dollar"
+							value="USD"
+							[(ngModel)]="currencyCode"
+						/>
+					</label>
+					<label [ngClass]="{'active': currencyCode == 'GBP'}" for="pound"
+						>&pound;
+						<input
+							type="radio"
+							name="currency"
+							id="pound"
+							value="GBP"
+							[(ngModel)]="currencyCode"
+						/>
+					</label>
+					<label [ngClass]="{'active': currencyCode == 'EUR'}" for="euro"
+						>&euro;
+						<input
+							type="radio"
+							name="currency"
+							id="euro"
+							value="EUR"
+							[(ngModel)]="currencyCode"
+						/>
+					</label>
+					<label [ngClass]="{'active': currencyCode == 'INR'}" for="rupee"
+						>&#8377;
+						<input
+							type="radio"
+							name="currency"
+							id="rupee"
+							value="INR"
+							[(ngModel)]="currencyCode"
+						/>
+					</label>
+					<label [ngClass]="{'active': currencyCode == 'JPY'}" for="yen"
+						>&yen;
+						<input
+							type="radio"
+							name="currency"
+							id="yen"
+							value="JPY"
+							[(ngModel)]="currencyCode"
+						/>
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
 			<td colspan="2" align="center">
-				<button type="button">Calculate</button>
+				<button type="button" (click)="doCalculation($event)">Calculate</button>
 				<button type="reset" class="ml20">Reset</button>
 			</td>
 		</tr>

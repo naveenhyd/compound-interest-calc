@@ -117,3 +117,24 @@ h3 {
 	padding: 10px;
 	color: #24292f;
 }
+
+@media print {
+	.formInput,
+	.print-link {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: map-get($screen-size, iphone )) {
+	.page-content {
+		margin-top: 24px;
+		border: none;
+		position: absolute;
+		width: 100%;
+		overflow: visible;
+	}
+	input,
+	select {
+		width: 70px;
+	}
+}

@@ -42,7 +42,7 @@ table.formInput {
 // @media only screen and (max-width: map-get($screen-size, iphohe )) {
 // }
 
-@media only screen and (max-width: map-get($screen-size, iphone )) {
+@media only screen and (max-width: map-get($screen-size, small-screen )) {
 	table.formInput {
 		margin-top: 24px;
 		width: 100%;

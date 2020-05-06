@@ -15,7 +15,7 @@ header {
 	padding: 15px 15px;
 }
 
-@media only screen and (max-width: map-get($screen-size, iphone )) {
+@media only screen and (max-width: map-get($screen-size, small-screen )) {
 	header {
 		background-color: yellowgreen;
 		min-height: 24px;

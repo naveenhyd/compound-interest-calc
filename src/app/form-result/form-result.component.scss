@@ -35,7 +35,7 @@
 	}
 }
 
-@media only screen and (max-width: map-get($screen-size, iphone)) {
+@media only screen and (max-width: map-get($screen-size, small-screen)) {
 	.result-container {
 		width: 100%;
 	}
